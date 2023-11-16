@@ -10,7 +10,7 @@ const Product = ({ product }) => {
       </Link>
       <Card.Body>
         <Link to={`/product/${product._id}`}>
-          <Card.Title as='div'>
+          <Card.Title as='div' className='product-title'>
             <srong>{product.name}</srong>
           </Card.Title>
         </Link>
@@ -26,4 +26,7 @@ const Product = ({ product }) => {
   )
 }
 
+Rating.defaultProps = {
+  color: '#f8e825',
+}
 export default Product
