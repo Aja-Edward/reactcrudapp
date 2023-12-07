@@ -18,7 +18,7 @@ app.get('/api/products', (req, res) => {
 })
 
 // Here is the time to install Nodemone to avoid resarting all the time.
-// Alsoo we need to install concurrently, so we do not run frontend and backend differently
+// Also we need to install concurrently, so we do not run frontend and backend differently
 
 
 // fetch single product
