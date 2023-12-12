@@ -2,11 +2,15 @@
 
 // 2nd set up the express sever
 import dotenv from 'dotenv'
+import connectDB from './config/db.js'
 dotenv.config()
 import express from 'express'
 import products from './data/products.js'
 // const port = 5000
+
 const port = process.env.PORT || 5000
+
+connectDB()
 const app = express()
 
 app.get('/', (req, res) => {
