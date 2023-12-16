@@ -34,3 +34,22 @@ const importData = async () => {
     process.exit(1)
   }
 }
+
+const destroyData = async () => {
+  try {
+    await Order.deleteMany()
+    await Product.deleteMany()
+    await User.deleteMany()
+    process.exit()
+  } catch (error) {
+    console.error(`${error}`.red.inverse)
+    process.exit(1)
+  }
+}
+
+// console.log(process.argv[2])
+if (process.argv[2] === '-d') {
+  destroyData()
+} else {
+  importData()
+}
