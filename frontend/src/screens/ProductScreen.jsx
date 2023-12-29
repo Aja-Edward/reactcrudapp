@@ -7,7 +7,7 @@ import {
   ListGroup,
   Card,
   Button,
-  FormControl,
+  Form,
 } from 'react-bootstrap'
 import { useDispatch } from 'react-redux'
 import Rating from '../components/Rating'
@@ -111,7 +111,7 @@ const ProductScreen = () => {
                     <Row>
                       <Col>Qty:</Col>
                       <Col>
-                        <FormControl
+                        <Form.Control
                           as='select'
                           value={qty}
                           onChange={(e) => setQty(Number(e.target.value))}
@@ -121,7 +121,7 @@ const ProductScreen = () => {
                               {x + 1}
                             </option>
                           ))}
-                        </FormControl>
+                        </Form.Control>
                       </Col>
                     </Row>
                   </ListGroup.Item>
