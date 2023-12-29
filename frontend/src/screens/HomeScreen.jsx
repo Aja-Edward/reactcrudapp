@@ -2,7 +2,10 @@
 import { Row, Col } from 'react-bootstrap'
 // import products from '../products'
 import Product from '../components/Product'
+import Loader from '../components/Loader'
+import Message from '../components/Message'
 import { useGetProductsQuery } from '../slices/productsApiSlice'
+
 // import axios from 'axios'
 
 const HomeScreen = () => {
@@ -33,12 +36,15 @@ const HomeScreen = () => {
   return (
     <>
       {isLoading ? (
-        <h2>Loading ...</h2>
+        <Loader />
       ) : error ? (
-        <div>{error.data?.message || error.error}</div>
+        <Message variant='danger'>
+          {error?.data?.message || error.error}
+        </Message>
       ) : (
         <>
           <h1>Latest Products</h1>
+          
           <Row>
             {products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
